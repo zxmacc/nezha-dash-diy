@@ -30,6 +30,7 @@ export async function GET(_: Request) {
             live_servers: 0,
             offline_servers: 0,
             total_bandwidth: 0,
+            total_price: 0,
             result: []
         }
 
