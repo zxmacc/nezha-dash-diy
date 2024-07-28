@@ -28,6 +28,8 @@ export default function ServerListClient() {
             uptime={server.status.Uptime / 86400}
             mem={(server.status.MemUsed / server.host.MemTotal) * 100}
             stg={(server.status.DiskUsed / server.host.DiskTotal) * 100}
+            price={server.price}
+            date={server.date}
           />
         ),
       )}

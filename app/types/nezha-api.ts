@@ -2,6 +2,7 @@ export type ServerApi = {
   live_servers: number;
   offline_servers: number;
   total_bandwidth: number;
+  total_price: number;
   result: NezhaAPISafe[];
 };
 
@@ -17,6 +18,8 @@ export interface NezhaAPI {
   valid_ip: string;
   host: NezhaAPIHost;
   status: NezhaAPIStatus;
+  price?: string;
+  date?: string;
 }
 
 export interface NezhaAPIHost {

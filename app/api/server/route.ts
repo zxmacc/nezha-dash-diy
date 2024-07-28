@@ -45,6 +45,32 @@ export async function GET(_: Request) {
             delete element.ipv6;
             delete element.valid_ip;
 
+            let price = 0;
+            const priceRegex = /(\$|\¥)\d+(\.\d+)?(y|m)/;
+            const priceMatch = element.name.match(priceRegex);
+            if (priceMatch) {
+                element.price = priceMatch[0].slice(0, -1);
+                const price_ = parseFloat(priceMatch[0].slice(1, -1));
+                price = isNaN(price_) ? 0 : price_;
+                if (priceMatch[0].charAt(0) === "$") {
+                    price = price * 7.3;
+                }
+                if (priceMatch[0].charAt(priceMatch[0].length - 1) === "y") {
+                    price = price / 12;
+                    element.price = element.price + "/年";
+                } else {
+                    element.price = element.price + "/月";
+                }
+                element.name = element.name.replace(priceRegex, "").trim();
+            }
+            data.total_price += price;
+            const dateRegex = /@(\d{6})/;
+            const nameMatch = element.name.match(dateRegex);
+            if (nameMatch) {
+                const date = DateTime.fromFormat(nameMatch[0], "@yyMMdd").toFormat("yyyy-MM-dd");
+                element.date = date;
+                element.name = element.name.replace(dateRegex, "").trim();
+            }
             return element;
         });
 

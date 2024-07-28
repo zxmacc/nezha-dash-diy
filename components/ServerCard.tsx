@@ -19,6 +19,8 @@ type ServerCardProps = {
   stg: number;
   up: number;
   down: number;
+  price?: string;
+  date?: string;
 };
 
 export default function ServerCard({
@@ -30,6 +32,8 @@ export default function ServerCard({
   stg,
   up,
   down,
+  price,
+  date
 }: ServerCardProps) {
   return status === "online" ? (
     <Card
@@ -49,8 +53,9 @@ export default function ServerCard({
           </TooltipTrigger>
           <TooltipContent>
             <section>
-              <div>Hostname: {name}</div>
-              <div>Online: {uptime.toFixed(0)} Days</div>
+              {price ? <div>价格: {price}</div> : null}
+              {date ? <div>到期: {date}</div> : null}
+              <div>在线: {uptime.toFixed(0)} 天</div>
             </section>
           </TooltipContent>
         </Tooltip>

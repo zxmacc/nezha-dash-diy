@@ -20,13 +20,13 @@ function Header() {
               className="relative !m-0 h-6 w-6 border-2 border-white object-cover object-top !p-0 transition duration-500 group-hover:z-30 group-hover:scale-105"
             />
           </div>
-          HomeDash
+          酸奶的探针
           <Separator
             orientation="vertical"
             className="mx-2 hidden h-4 w-[1px] md:block"
           />
           <p className="hidden text-sm font-medium opacity-40 md:block">
-            Simple and beautiful dashboard
+            服务器状态面板
           </p>
         </section>
         {/* <LiveTag /> */}
@@ -46,9 +46,9 @@ function Overview() {
 
   return (
     <section className={"md:mt-16 mt-10 flex flex-col"}>
-      <p className="text-md font-semibold">👋 Overview</p>
+      <p className="text-md font-semibold">👋 你好</p>
       <div className="flex items-center gap-1.5">
-        <p className="text-sm font-medium opacity-50">where the time is</p>
+        <p className="text-sm font-medium opacity-50">现在是</p>
         {mouted && (
           <p className="opacity-1 text-sm font-medium">
             {DateTime.now().setLocale("en-US").toLocaleString(time)}

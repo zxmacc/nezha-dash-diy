@@ -18,7 +18,7 @@ export default function ServerOverviewClient() {
             <Card>
                 <CardContent className="px-6 py-3" >
                     <section className="flex gap-1 flex-col">
-                        <p className="text-md font-medium">Total servers</p>
+                        <p className="text-md font-medium">服务器</p>
                         <div className="flex items-center gap-2">
                             <span className="relative flex h-2 w-2">
                                 <span className="relative inline-flex h-2 w-2 rounded-full bg-blue-500"></span>
@@ -31,7 +31,7 @@ export default function ServerOverviewClient() {
             <Card>
                 <CardContent className="px-6 py-3" >
                     <section className="flex gap-1 flex-col">
-                        <p className="text-md font-medium">Online servers</p>
+                        <p className="text-md font-medium">在线</p>
                         <div className="flex items-center gap-2">
                             <span className="relative flex h-2 w-2">
                                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-500 opacity-75"></span>
@@ -45,7 +45,7 @@ export default function ServerOverviewClient() {
             <Card>
                 <CardContent className="px-6 py-3" >
                     <section className="flex gap-1 flex-col">
-                        <p className="text-md font-medium">Offline servers</p>
+                        <p className="text-md font-medium">离线</p>
                         <div className="flex items-center gap-2">
                             <span className="relative flex h-2 w-2">
                                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-red-500 opacity-75"></span>
@@ -61,8 +61,8 @@ export default function ServerOverviewClient() {
             <Card>
                 <CardContent className="px-6 py-3 relative" >
                     <section className="flex gap-1 flex-col">
-                        <p className="text-md font-medium">Total bandwidth</p>
-                        {data ? <p className="text-lg font-semibold">{formatBytes(data?.total_bandwidth)}</p> : <div className="h-7 flex items-center"><Loader visible={true} /></div>}
+                        <p className="text-md font-medium">每月支出</p>
+                        {data ? <p className="text-lg font-semibold">{data?.total_price.toFixed(2)}元</p> : <div className="h-7 flex items-center"><Loader visible={true} /></div>}
                     </section>
                     <Image
                         className="pointer-events-none absolute right-3 top-[-85px] z-10 w-20"
