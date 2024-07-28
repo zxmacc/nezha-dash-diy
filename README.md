@@ -1,18 +1,9 @@
-<h1 align="center">NezhaDash</h1>
-
-<strong>NezhaDash 是一个基于 Next.js 和 哪吒监控 的仪表盘</strong>
-<br>
-
-</div>
-
-### 一键部署到 Vercel
-[部署简易教程](https://buycoffee.top/blog/tech/nezha)
-<br>
-<br>
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fhamster1963%2Fnezha-dash&env=NezhaBaseUrl,NezhaAuth&project-name=nezha-dash&repository-name=nezha-dash)
-
-
-
-
-![screen-shot-one](/.github/shotOne.png)
-![screen-shot-two](/.github/shotTwo.png)
+相比原版增加服务器价格和到期时间，并改为中文
+在哪吒面板的服务器名称后增加:
+$或¥代表美元或人民币
+价格
+y或m代表月付或年付
+@
+六位数字代表到期日期yyMMdd格式
+示例：咕咕云¥128y@250101代表年付128元，到期日2025-01-01
+价格和日期可以只写其一或者全无
